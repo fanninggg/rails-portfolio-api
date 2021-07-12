@@ -1,9 +1,27 @@
 class Api::V1::TestimonialsController < Api::V1::BaseController
-	acts_as_token_authentication_handler_for User, except: [ :index, :show ]
+	acts_as_token_authentication_handler_for User, only: [ :update, :create, :destroy ]
 	before_action :set_testimonial, only: [ :show, :update, :destroy ]
 
   def index
     @testimonials = policy_scope(Testimonial)
+  end
+
+  def clients
+    @testimonials = Testimonial.where(source: 'client')
+    authorize @testimonials
+    render :index
+  end
+
+  def students
+    @testimonials = Testimonial.where(source: 'student')
+    authorize @testimonials
+    render :index
+  end
+
+  def colleagues
+    @testimonials = Testimonial.where(source: 'colleague')
+    authorize @testimonials
+    render :index
   end
 
   def show

@@ -5,7 +5,13 @@ Rails.application.routes.draw do
       resources :projects, except: [:new, :edit] do
       	resources :images, only: [:create, :destroy]
       end
-      resources :testimonials, except: [:new, :edit]
+      resources :testimonials, except: [:new, :edit] do
+      	collection do
+		      get :students
+		      get :clients
+		      get :colleagues
+		    end
+      end
     end
   end
 end
