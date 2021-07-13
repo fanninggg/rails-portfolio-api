@@ -4,7 +4,7 @@ Feel free to explore and see how it all works.
 
 ## Technologies
 
-This was built using Ruby on Rails, Pundit, Devise & Simple Token Authenticationto provide up to date information about my latest projects and testimonials from some of my recent clients, colleagues and students.
+This was built using Ruby on Rails, Pundit, Devise & Simple Token Authentication to provide up to date information about my latest projects and testimonials from some of my recent clients, colleagues and students.
 
 This was built to serve a React app, which can be found at [https://www.benfanning.dev/](https://www.benfanning.dev/).
 If you'd like to see the code of the React app, you can view that [here](https://github.com/fanninggg/portfolio).
